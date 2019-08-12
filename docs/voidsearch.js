@@ -114,16 +114,18 @@
         packages = packages || [];
         const tooMany = !showAll && packages.length > maxResults;
 		table.children().remove();
+		const q = query.val().trim();
         if (packages.length == 0) {
             return;
         }
         table.append(
 			header, packageCell(packages, "<td>")
-//packages.map(p =>
-//{
-//p.anchor = "<a href=\"https://github.com/void-linux/void-packages/tree/master/srcpkgs/"
-//+ p.name + "\" target=\"_blank\" title=\"View on GitHub\">" + p.name + "</a>";
+//packages.map(p => {
+//p.anchor = "<a href=\"https://alpha.de.repo.voidlinux.org/current/"
+// + q + "-" p.version + "_" + p.revision + "." + archs.val()
+// + ".xbps\" target=\"_blank\" title=\"latest xbps package\">" + q + "</a>";
 //p.filename_size = formatSize(p.filename_size);
+//p.installed_size = formatSize(p.installed_size);
 //return packageCell(p, "<td>");
 //})
         );
