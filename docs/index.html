@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>void linux package metadata</title>
+		<link rel="icon" type="image/png" href="icon.png" />
+		<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/assets/css/screen.css">
+		<link rel="stylesheet" href="/assets/css/solarized.css">
+		<link rel="stylesheet" href="/assets/css/misc.css">
+		<link href='/assets/css/font-ubuntu.css' rel='stylesheet' type='text/css'>
+		<script src="jquery.min.js"></script>
+		<script src="bootstrap.min.js"></script>
+	</head>
+
+<body role="document">
+	<div class="container">
+		<div class="container">
+			<div>
+				<h2>fetch package metadata</h2>
+				<p>retrieve metadata for the package matching your search.</p>
+				<form id="voidSearch">
+					<select name="arch" id="voidSearch_archs">
+					<option value="x86_64">x86_64</option></select>
+					<input type="text" name="q" placeholder="Package or description" id="voidSearch_query" />
+					<button type="submit" id="voidSearch_submit">Search</button>
+				</form>
+				<table id="voidSearch_result"></table>
+				<script src="voidsearch.js" async=""></script>
+			</div>
+		</div>
+		<div class="container col-md-8 col-md-offset-2">
+			<hr><footer class="footer">
+			<p class="text-center">Copyright 2019 <a href="https://github.com/orgs/void-linux/people">VoidLinux contributors</a></p>
+			<p class="text-center">Copyright 2008-2018 <a href="https://github.com/xtraeme">Juan RP</a> and contributors</p>
+			<p class="text-center">Linux&#174; is a registered trademark of Linus Torvalds (<a href="http://www.linuxfoundation.org/programs/legal/trademark/attribution">info</a>)</p>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>
