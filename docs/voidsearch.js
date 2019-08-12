@@ -11,7 +11,7 @@
 
     // Package column fields and headers
     const packageColumns = [
-        "anchor",
+//        "anchor",
         "version",
         "revision",
         "repository",
@@ -38,7 +38,7 @@
     ];
 
     const packageHeader = {
-		name: "Name",
+//		name: "Name",
 		version: "Version",
 		revision: "Revision",
 		repository: "Repository",
@@ -113,22 +113,19 @@
     function showPackages(packages, showAll) {
         packages = packages || [];
         const tooMany = !showAll && packages.length > maxResults;
-        if (tooMany) {
-            packages = packages.slice(0, maxResults);
-        }
-
-        table.children().remove();
+		table.children().remove();
         if (packages.length == 0) {
             return;
         }
         table.append(
-            header,
-            packages.map((p) => {
-                p.anchor = "<a href=\"https://github.com/void-linux/void-packages/tree/master/srcpkgs/"
-                    + p.name + "\" target=\"_blank\" title=\"View on GitHub\">" + p.name + "</a>";
-                p.filename_size = formatSize(p.filename_size);
-                return packageCell(p, "<td>");
-            })
+			header, packageCell(packages, "<td>")
+//packages.map(p =>
+//{
+//p.anchor = "<a href=\"https://github.com/void-linux/void-packages/tree/master/srcpkgs/"
+//+ p.name + "\" target=\"_blank\" title=\"View on GitHub\">" + p.name + "</a>";
+//p.filename_size = formatSize(p.filename_size);
+//return packageCell(p, "<td>");
+//})
         );
 
         if (tooMany) {
